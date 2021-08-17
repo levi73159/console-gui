@@ -1,11 +1,13 @@
 from pynput.keyboard import Listener, Key, KeyCode
 from colorama import init, Fore, Back, Style
-from .components import Component, Field
 import os
 
 
 class Reader:
-    def __init__(self, components: list[Component], stop_when_press=type(None), selected_color=Back.WHITE, selected_fore_color=Fore.BLACK):
+    default_back_color = Back.BLACK
+    default_fore_color = Fore.WHITE
+
+    def __init__(self, components: list, stop_when_press=type(None), selected_color=Back.WHITE, selected_fore_color=Fore.BLACK):
         init()
         self.selected_color = selected_color
         self.selected_fore_color = selected_fore_color
@@ -17,6 +19,9 @@ class Reader:
 
         self.current_selected=components[0]
         self.index = 0
+        self.update()
+
+        from . import Field
 
         if not self.current_selected.enable:
             while True:
@@ -52,7 +57,12 @@ class Reader:
     def _print_with_color(s, color=Fore.WHITE, brightness=Style.NORMAL, **kwargs):
         print(f"{brightness}{color}{s}{Style.RESET_ALL}", **kwargs)
 
+    def get(self, name):
+        from .components import Component
+        return self.components.get(name, Component('', None, enable=False))
+
     def up(self):
+        from . import Field
         self.index -= 1
         if self.index < 0:
             self.index = len(self.components) - 1
@@ -81,6 +91,7 @@ class Reader:
 
 
     def down(self):
+        from . import Field
         self.index += 1
         if self.index >= len(self.components):
             self.index = 0
@@ -132,7 +143,7 @@ class Reader:
                 if not i.enable:
                     self._print_with_color(i, color=Back.WHITE + Fore.LIGHTWHITE_EX)
                 else:
-                    print(i)
+                    self._print_with_color(i, color=i.back_color + i.fore_color)
 
     def read(self):
         self.update()
@@ -146,3 +157,5 @@ class Reader:
                     return self.current_selected
                 self.update()
                 self.read()
+
+            print(self.components)

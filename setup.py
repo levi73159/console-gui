@@ -5,7 +5,7 @@ with open('README.md', 'r') as file:
 
 setup(
     name='console-gui',
-    version='0.0.4',    
+    version='0.0.5',    
     description='gui for conosle buttons and fields',
     long_description = text,
     long_description_content_type = 'text/markdown',
