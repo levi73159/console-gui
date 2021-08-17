@@ -11,7 +11,7 @@ setup(
     long_description_content_type = 'text/markdown',
     
     
-    url='https://github.com/shuds13/pyexample',
+    url='https://github.com/levi73159/console-gui',
     author='levi dalrymple',
     license='MIT License',
     packages=find_packages(),
