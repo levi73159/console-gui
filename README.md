@@ -1,7 +1,7 @@
 # console-gui
 
 1 - install:
-    pip install gui-console
+    pip install console-gui
 
 2 - use
     from gui import *
@@ -39,3 +39,18 @@
         # what will is show
         def __str__(self):
             return self.text
+
+4 - help
+
+    class Component:
+        def __init__(name, click, kwargs) 
+         name is not the thing that will display unless text is none
+         name is the str use to get Comp ex: reader.components.get('button')
+         for Button name use conent
+
+    Reader.__init__(the list of componets, 
+    stop if press type x = None by defalt,
+    the button color when selected=WHITE by defalt, 
+    the button fore color when selected=BLACK bu defalt)
+
+    

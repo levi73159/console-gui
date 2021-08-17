@@ -5,7 +5,7 @@ with open('README.md', 'r') as file:
 
 setup(
     name='console-gui',
-    version='0.0.1',    
+    version='0.0.4',    
     description='gui for conosle buttons and fields',
     long_description = text,
     long_description_content_type = 'text/markdown',
@@ -13,7 +13,7 @@ setup(
     
     url='https://github.com/shuds13/pyexample',
     author='levi dalrymple',
-    license='file: LICENSE',
+    license='MIT License',
     packages=find_packages(),
     install_requires=[
         'colorama',
