@@ -1,9 +1,11 @@
 # console-gui
 
 1 - install:
+
     pip install console-gui
 
 2 - use
+
     from gui import *
 
     # when we change the text
@@ -24,7 +26,8 @@
     reader.read()
 
 3 - add more
-    from gui.components import Component
+
+    from gui import Component
 
     class MyComponent(Component):
         def __init__(self, name, click, **kwargs):
