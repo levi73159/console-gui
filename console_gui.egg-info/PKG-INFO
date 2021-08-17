@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: console-gui
+Version: 0.1
+Summary: GUI for Cosnole
+Home-page: UNKNOWN
+Author: Levi
+Author-email: 
+License: UNKNOWN
+Keywords: python,console,input,gui
+Platform: UNKNOWN
+Classifier: Development Status :: Planning
+Classifier: Intended Audience :: Python beginners and pros
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+A package that allows to build simple gui in console
+
